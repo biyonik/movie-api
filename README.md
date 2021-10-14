@@ -50,6 +50,12 @@ NodeJS ile oluşturulmuş basit bir API projesi
             <td>Empty</td>
             <td>Verilen sayısal değere göre imdb_score büyükten küçüğe olmak kaydıyla filmleri listeler</td>
         </tr>
+        <tr>
+            <td>/api/movies/between/:start_year/:end_year</td>
+            <td>GET</td>
+            <td>Empty</td>
+            <td>Verilen yıllara göre, aralığa denk gelen filmleri listeler</td>
+        </tr>
     </tbody>
 </table>
 
