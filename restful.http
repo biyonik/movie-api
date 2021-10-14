@@ -1,0 +1,10 @@
+POST {{BASE_URL}}/api/movies
+Content-Type: application/json
+
+{
+    "title": "Recep İvedik 1",
+    "category": "Komedi",
+    "country": "Turkey",
+    "year":2008,
+    "imdb_score": 7.5
+}

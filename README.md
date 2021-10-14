@@ -2,6 +2,8 @@
 
 NodeJS ile oluşturulmuş basit bir API projesi
 <hr>
+
+# Movies
 <table>
     <thead>
         <tr>
@@ -44,6 +46,58 @@ NodeJS ile oluşturulmuş basit bir API projesi
         </tr>
         <tr>
             <td>/api/movies/top/:number</td>
+            <td>GET</td>
+            <td>Empty</td>
+            <td>Verilen sayısal değere göre imdb_score büyükten küçüğe olmak kaydıyla filmleri listeler</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+# Directors
+<table>
+    <thead>
+        <tr>
+            <th>Route</th>
+            <th>HTTP Verb</th>
+            <th>POST Body</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/api/directors/</td>
+            <td>GET</td>
+            <td>Empty</td>
+            <td>Tüm yönetmenleri listeler</td>
+        </tr>
+        <tr>
+            <td>/api/directors/</td>
+            <td>POST</td>
+            <td>{'name': 'John', 'surname': 'Doe'}</td>
+            <td>Bir yönetmen ekler</td>
+        </tr>
+        <tr>
+            <td>/api/directors/:director_id</td>
+            <td>GET</td>
+            <td>Empty</td>
+            <td>Bir yönetmen bilgisini getirir</td>
+        </tr>
+        <tr>
+            <td>/api/directors/:director_id</td>
+            <td>PUT</td>
+            <td>{name: 'Jonnie', surname: 'Doe'}</td>
+            <td>Bir yönetmeni günceller</td>
+        </tr>
+        <tr>
+            <td>/api/directors/:director_id</td>
+            <td>DELETE</td>
+            <td>Empty</td>
+            <td>Bir yönetmeni siler</td>
+        </tr>
+        <tr>
+            <td>/api/directors/best/:number</td>
             <td>GET</td>
             <td>Empty</td>
             <td>Verilen sayısal değere göre imdb_score büyükten küçüğe olmak kaydıyla filmleri listeler</td>
