@@ -1,10 +1,38 @@
+###
+GET {{BASE_URL}}/api/movies
+
+###
+GET {{BASE_URL}}/api/movies/616784e1e375e23f6523e5cb
+
+###
 POST {{BASE_URL}}/api/movies
 Content-Type: application/json
 
 {
-    "title": "Recep İvedik 1",
+    "title": "Hep Yek 3",
     "category": "Komedi",
     "country": "Turkey",
-    "year":2008,
-    "imdb_score": 7.5
+    "year":2018,
+    "imdb_score": 8.6
 }
+
+###
+PUT {{BASE_URL}}/api/movies/616784e1e375e23f6523e5cb
+Content-Type: application/json
+
+{
+    "title": "Hep Yek 3",
+    "category": "Komedi",
+    "country": "Turkey",
+    "year":2018,
+    "imdb_score": 8.6
+}
+
+###
+DELETE {{BASE_URL}}/api/movies/616784e1e375e23f6523e5cb
+
+###
+GET {{BASE_URL}}/api/movies/top/3
+
+###
+GET {{BASE_URL}}/api/movies/between/2015/2016

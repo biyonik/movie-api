@@ -1,20 +1,27 @@
 const express = require('express');
-const MovieModel = require("../models/MovieModel");
 const router = express.Router();
+const {
+    get,
+    getById,
+    add,
+    update,
+    remove,
+    topByNumber,
+    between
+} = require('../controllers/MovieController');
 
+router.get('/', get);
 
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/:movie_id', getById);
 
-router.post('/', async function(request, response, next) {
-  const movie = new MovieModel(request.body);
-  try {
-    await movie.save();
-    response.status(201).json(movie);
-  } catch(e) {
-    throw e;
-  }
-});
+router.post('/', add);
+
+router.put('/:movie_id', update);
+
+router.delete('/:movie_id', remove);
+
+router.get('/top/:number', topByNumber);
+
+router.get('/between/:start_year/:end_year', between);
 
 module.exports = router;
