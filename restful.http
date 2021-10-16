@@ -1,19 +1,21 @@
-###
+### Movies
 GET {{BASE_URL}}/api/movies
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5kb2UiLCJpYXQiOjE2MzQzNTc3MDUsImV4cCI6MTYzNDM1ODQyNX0.sxysgx6EsopwT2P7Zf1_fwO5eIepokGgFNKx6h8p40Y
 
 ###
-GET {{BASE_URL}}/api/movies/616784e1e375e23f6523e5cb
+GET {{BASE_URL}}/api/movies/6169ac47976c978ccc4195e3
 
 ###
 POST {{BASE_URL}}/api/movies
 Content-Type: application/json
 
 {
-    "title": "Hep Yek 3",
-    "category": "Komedi",
-    "country": "Turkey",
-    "year":2018,
-    "imdb_score": 8.6
+  "title": "Yengeç Sepeti",
+  "category": "Dram",
+  "country": "Turkey",
+  "year": 1995,
+  "director_id": "6169ae11cc28a46e0d9a6194",
+  "imdb_score": 5.1
 }
 
 ###
@@ -21,11 +23,11 @@ PUT {{BASE_URL}}/api/movies/616784e1e375e23f6523e5cb
 Content-Type: application/json
 
 {
-    "title": "Hep Yek 3",
-    "category": "Komedi",
-    "country": "Turkey",
-    "year":2018,
-    "imdb_score": 8.6
+  "title": "Hep Yek 3",
+  "category": "Komedi",
+  "country": "Turkey",
+  "year": 2018,
+  "imdb_score": 8.6
 }
 
 ###
@@ -36,3 +38,46 @@ GET {{BASE_URL}}/api/movies/top/3
 
 ###
 GET {{BASE_URL}}/api/movies/between/2015/2016
+
+###
+POST {{BASE_URL}}/api/directories
+Content-Type: application/json
+
+{
+  "firstname": "Fatih",
+  "lastname": "Aksoy",
+  "bio": ""
+}
+
+### Directors
+GET {{BASE_URL}}/api/directories
+
+###
+GET {{BASE_URL}}/api/directories/6169acb6976c978ccc4195ea
+
+###
+PUT {{BASE_URL}}/api/directories/6169acb6976c978ccc4195ea
+Content-Type: application/json
+
+{
+  "bio": "Türk yönetmen, senarist ve fotoğrafçı. 1998 yılından itibaren çektiği uzun metrajlı filmler ile birçok ödül kazanmış ve uluslararası alanda tanınmıştır. Kış Uykusu filmi 2014 Cannes Film Festivali'nde Altın Palmiye Ödülü kazanmış ve sinema tarihinde bu filmi kazanan ikinci Türk filmi olmuştur."
+}
+
+### User
+
+POST {{BASE_URL}}/api/users/register
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "password": "123456/*"
+}
+
+###
+POST {{BASE_URL}}/api/users/login
+Content-Type: application/json
+
+{
+  "username": "johndoe",
+  "password": "123456/*"
+}

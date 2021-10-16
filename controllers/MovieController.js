@@ -1,8 +1,21 @@
 const MovieModel = require("../models/MovieModel");
+const mongoose = require("mongoose");
 
 const get = async function (request, response, next) {
     try {
-        const movies = await MovieModel.find({});
+        const movies = await MovieModel.aggregate([
+            {
+                $lookup: {
+                    from: 'directors',
+                    localField: 'director_id',
+                    foreignField: '_id',
+                    as: 'director'
+                }
+            },
+            {
+                $unwind: '$director'
+            }
+        ]);
         if (movies) {
             await response.status(200).json(movies);
         } else {
@@ -19,7 +32,25 @@ const get = async function (request, response, next) {
 
 const getById = async function (request, response, next) {
     try {
-        const movie = await MovieModel.findById(request.params.movie_id);
+        const movie_id = mongoose.Types.ObjectId(request.params.movie_id);
+        const movie = await MovieModel.aggregate([
+            {
+                $match: {
+                    '_id': movie_id
+                }
+            },
+            {
+                $lookup: {
+                    from: 'directors',
+                    localField: 'director_id',
+                    foreignField: '_id',
+                    as: 'director'
+                }
+            },
+            {
+                $unwind: '$director'
+            }
+        ]);
         if (movie) {
             await response.status(200).json(movie);
         } else {
@@ -66,7 +97,7 @@ const remove = async function (request, response, next) {
     try {
         const id = request.params.movie_id;
         const movie = await MovieModel.findByIdAndRemove(id);
-        if (!movie) {
+        if (movie) {
             response.status(200).json({
                 message: 'Silme işlemi başarılı',
                 status: 200,
