@@ -16,7 +16,6 @@ app.set('API_SECRET_KEY', generalConfig.API_SECRET_KEY);
 
 // db connection
 require('./configs/dbConnectionConfig');
-const {verify} = require("jsonwebtoken");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

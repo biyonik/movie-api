@@ -1,5 +1,4 @@
 const DirectorModel = require("../models/DirectorModel");
-const System = require("express");
 const mongoose = require("mongoose");
 
 const get = async function (request, response, next) {

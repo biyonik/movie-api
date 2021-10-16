@@ -110,3 +110,29 @@ NodeJS ile oluşturulmuş basit bir API projesi
         </tr>
     </tbody>
 </table>
+
+# Users
+<table>
+    <thead>
+        <tr>
+            <th>Route</th>
+            <th>HTTP Verb</th>
+            <th>POST Body</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>/api/users/login</td>
+            <td>POST</td>
+            <td>{'username': 'johndoe', 'password': '123456/*'}</td>
+            <td>Kullanıcı girişi yapılır</td>
+        </tr>
+        <tr>
+            <td>/api/users/register</td>
+            <td>POST</td>
+            <td>{'username': 'johndoe', 'password': '123456/*'}</td>
+            <td>Yeni bir kullanıcı kaydı yapılır</td>
+        </tr>
+    </tbody>
+</table>
